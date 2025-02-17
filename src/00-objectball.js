@@ -121,28 +121,54 @@ function gameObject () {
 function numPointsScored (playerName) {
     OGobject = gameObject()
     
-    let keys = []
-    let currentObj = OGobject
-    let currentKey = ''
-    
+    if (OGobject['home']['players'][playerName]) {
+        console.log(OGobject['home']['players'][playerName]['points'])
+   }
 
-    function keyGrabber (object) {
-        
-        keys = Object.keys(object)
-        console.log(keys)
-        
-    }
+   else if (OGobject['away']['players'][playerName]) {
+    console.log(OGobject['away']['players'][playerName]['points']);
+   }
+
+   else {
+    console.log('player does not exist')
+   }
 
    
-
-    function digger () {
-    
-    }
-
-    keyGrabber(OGobject)
-    digger()
-
     
 }
 
-numPointsScored('Alan Anderson')
+function shoeSize (playerName) {
+    OGobject = gameObject()
+    
+    if (OGobject['home']['players'][playerName]) {
+        console.log(OGobject['home']['players'][playerName]['shoe'])
+   }
+
+   else if (OGobject['away']['players'][playerName]) {
+    console.log(OGobject['away']['players'][playerName]['shoe']);
+   }
+
+   else {
+    console.log('player does not exist')
+   }
+}
+
+function teamColors (team) {
+    OGobject = gameObject()
+
+    if (OGobject['home']['teamName'] == team) {
+         console.log(OGobject['home']['colors'])
+    }
+    else if (OGobject['away']['teamName'] == team) {
+        console.log(OGobject['away']['colors'])
+    }
+}
+
+function teamNames() {
+    OGobject = gameObject()
+
+    console.log()
+}
+  
+
+teamColors('Brooklyn Nets')
